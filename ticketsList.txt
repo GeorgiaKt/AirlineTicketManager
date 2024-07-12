@@ -1,0 +1,10 @@
+TicketId=1 ,	 IssueDate= 13/05/2021 ,	 ClientName= Papakonstantinou Giorgos ,	 Itinerary= Athens-London ,	 TicketPrice= 30 ,	 Luggage= 1 ,	 Airlines= Aegean Airlines ,	 IdentityNumber= AK147093 ,	 DepartureTime= 9AM
+TicketId=2 ,	 IssueDate= 12/04/2021 ,	 ClientName= Papadopoulou Aikaterini ,	 Itinerary= Toronto-Madrid ,	 TicketPrice= 40 ,	 Luggage= 2 ,	 Airlines= Swiss Airlines ,	 IdentityNumber= PT305733 ,	 DepartureTime= 6AM
+TicketId=3 ,	 IssueDate= 08/07/2020 ,	 ClientName= Ioannou Alexandros ,	 Itinerary= Komotini-Athens ,	 TicketPrice= 30 ,	 Luggage= 1 ,	 Airlines= Ryan Airines ,	 IdentityNumber= TX594772 ,	 DepartureTime= 9AM
+TicketId=4 ,	 IssueDate= 23/07/2021 ,	 ClientName= Antoniou Christos ,	 Itinerary= Chania-Thessaloniki ,	 TicketPrice= 40 ,	 Luggage= 2 ,	 Airlines= Olympic Airlines ,	 IdentityNumber= XB879644 ,	 DepartureTime= 7PM
+TicketId=5 ,	 IssueDate= 28/09/2021 ,	 ClientName= Manthou Aggeliki ,	 Itinerary= Athens-Paris ,	 TicketPrice= 65 ,	 Luggage= 4 ,	 Airlines= Aegean Airlines ,	 IdentityNumber= AZ132250 ,	 DepartureTime= 6AM
+TicketId=6 ,	 IssueDate= 19/12/2021 ,	 ClientName= Thomas Nikos ,	 Itinerary= Patra-Athens ,	 TicketPrice= 30 ,	 Luggage= 1 ,	 Airlines= Ryan Airines ,	 IdentityNumber= KN948536 ,	 DepartureTime= 3PM
+TicketId=7 ,	 IssueDate= 24/06/2021 ,	 ClientName= Kappa Eleni ,	 Itinerary= London-Athens ,	 TicketPrice= 55 ,	 Luggage= 3 ,	 Airlines= British Airways ,	 IdentityNumber= TT944835 ,	 DepartureTime= 9AM
+TicketId=8 ,	 IssueDate= 03/09/2021 ,	 ClientName= Karagiannis Sotiris ,	 Itinerary= Thessaloniki-Athens ,	 TicketPrice= 40 ,	 Luggage= 2 ,	 Airlines= Aegean Airlines ,	 IdentityNumber= ON593751 ,	 DepartureTime= 7PM
+TicketId=9 ,	 IssueDate= 14/01/2021 ,	 ClientName= Antoniou Panagiotis ,	 Itinerary= Athens-Berlin ,	 TicketPrice= 40 ,	 Luggage= 2 ,	 Airlines= Aegean Airlines ,	 IdentityNumber= BX039573 ,	 DepartureTime= 3PM
+TicketId=10 ,	 IssueDate= 18/03/2022 ,	 ClientName= Louka Anna ,	 Itinerary= Thessaloniki-Milan ,	 TicketPrice= 55 ,	 Luggage= 3 ,	 Airlines= Ryan Airines ,	 IdentityNumber= EM496592 ,	 DepartureTime= 3PM
