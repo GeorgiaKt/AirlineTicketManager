@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f117fd13-8bcf-4278-9539-e7ec9cf24b4e" name="Changes" comment="" />
+    <list default="true" id="f117fd13-8bcf-4278-9539-e7ec9cf24b4e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AboutWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewTicketWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewTicketWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicketApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2jAFS5j9CoGJxm5VG1mYjzACLVE" />
   <component name="ProjectViewState">
@@ -20,11 +32,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/geo/OneDrive/_Programming/Java/IntelliJ/AirlineTicketManager",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/geo/OneDrive/_Programming/Java/IntelliJ/MultimediaApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.26666668",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -51,7 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1720821972385</updated>
       <workItem from="1720821973403" duration="30000" />
-      <workItem from="1720822015708" duration="934000" />
+      <workItem from="1720822015708" duration="1837000" />
+      <workItem from="1720964035201" duration="7447000" />
     </task>
     <servers />
   </component>

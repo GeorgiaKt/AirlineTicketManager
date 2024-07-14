@@ -5,7 +5,10 @@ import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class NewTicketWindow extends JFrame {
 
@@ -32,7 +35,7 @@ public class NewTicketWindow extends JFrame {
     private JPanel panelBottom;
     private JButton btnSave;
 
-    private ArrayList<Ticket> ticketstList; // list of issued tickets
+    private int price = 50;
 
 
     public NewTicketWindow() {
@@ -44,7 +47,7 @@ public class NewTicketWindow extends JFrame {
         labelTextClientName = new JLabel("Client Name: ");
         textItinerary = new JTextField(16);
         labelTextItinerary = new JLabel("Itinerary: ");
-        labelTicketPrice = new JLabel("Ticket Price: ");
+        labelTicketPrice = new JLabel("Ticket Price: " + price);
         comboLuggage = new JComboBox();
         labelComboLuggage = new JLabel("Luggage: ");
         comboAirlines = new JComboBox();
@@ -60,9 +63,6 @@ public class NewTicketWindow extends JFrame {
         panelBottom = new JPanel();
 
         btnSave = new JButton("Save");
-
-        ticketstList = new ArrayList<>();
-
     }
 
     public void prepareUINewTicketWindow() {
@@ -78,8 +78,7 @@ public class NewTicketWindow extends JFrame {
 
         addItemsInComboBoxes();
 
-
-        setActionListenerForBtnSave();
+        addActionListeners();
 
         // add panels on frame
         this.add(panelMain, BorderLayout.CENTER);
@@ -91,7 +90,28 @@ public class NewTicketWindow extends JFrame {
         this.setVisible(true);
     }
 
-    private void setActionListenerForBtnSave() {
+    private void addActionListeners() {
+        // listener for comboLuggage in order to update ticket price each time a different number of luggage is selected
+        comboLuggage.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int luggage = Integer.parseInt((String) Objects.requireNonNull(comboLuggage.getSelectedItem()));
+                int ticketPrice = 50;
+                //change ticket price based on the number of luggage selected
+                if (luggage == 1)
+                    ticketPrice = ticketPrice + 30;
+                else if (luggage == 2)
+                    ticketPrice = ticketPrice + 40;
+                else if (luggage == 3)
+                    ticketPrice = ticketPrice + 55;
+                else if (luggage == 4)
+                    ticketPrice = ticketPrice + 65;
+
+                labelTicketPrice.setText("Ticket Price: " + ticketPrice);  // update ticket price label
+                price = ticketPrice;
+            }
+        });
+        // listener for btnSave in order to get values of all fields and check that all have value before saving the ticket to a txt file
         btnSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -101,77 +121,69 @@ public class NewTicketWindow extends JFrame {
                 String issueDate;
                 String clientName;
                 String itinerary;
-                int ticketPrice = 20;
-
                 int luggage;
                 String airlines;
                 String identityNumber;
                 String departureTime;
+                int ticketPrice;
 
                 ticketId = count;
+                // get field values
                 labelTicketId.setText("Ticket Id: " + ticketId);
                 issueDate = textIssueDate.getText().trim();
                 clientName = textClientName.getText().trim();
                 itinerary = textItinerary.getText().trim();
-                luggage = comboLuggage.getSelectedIndex();
-
-                //ticket price changes based on the number of luggage selected
-                if (luggage == 1)
-                    ticketPrice = 30;
-                else if (luggage == 2)
-                    ticketPrice = ticketPrice + 20;
-                else if (luggage == 3)
-                    ticketPrice = ticketPrice + 35;
-                else if (luggage == 4)
-                    ticketPrice = ticketPrice + 45;
-
-
+                luggage = Integer.parseInt((String) Objects.requireNonNull(comboLuggage.getSelectedItem()));
                 airlines = (String) comboAirlines.getSelectedItem();
                 identityNumber = textIdentityNumber.getText().trim();
                 departureTime = (String) comboDeparture.getSelectedItem();
+                ticketPrice = price;
 
-                labelTicketPrice.setText("Ticket Price: " + ticketPrice);  // update ticket price label
-
-                // check if any of the fields is empty, show corresponding message
-                // if not empty save ticket to file
-                if (issueDate.isEmpty() || clientName.isEmpty() || itinerary.isEmpty() || luggage == 0 || (airlines.equalsIgnoreCase("(Select flight airlines)")) || identityNumber.isEmpty() || (departureTime.equalsIgnoreCase("(Select departure time)"))) {
+                // check if any of the fields is empty, show corresponding message, if not, save ticket to file
+                if (issueDate.isEmpty() || clientName.isEmpty() || itinerary.isEmpty() || (airlines.equalsIgnoreCase("(Select flight airlines)")) || identityNumber.isEmpty() || (departureTime.equalsIgnoreCase("(Select departure time)"))) {
                     JOptionPane.showMessageDialog(NewTicketWindow.this, "Nothing to save", "Saving Error", JOptionPane.ERROR_MESSAGE);
-                    return;
                 } else {
-                    Ticket ticket = new Ticket(ticketId, issueDate, clientName, itinerary, ticketPrice, luggage, airlines, identityNumber, departureTime);
-                    ticketstList.add(ticket);
-                }
+                    Ticket ticket = new Ticket(ticketId, issueDate, clientName, itinerary, luggage, airlines, identityNumber, departureTime, ticketPrice);
+                    final JFileChooser fc = new JFileChooser();
+                    int returnVal = fc.showSaveDialog(NewTicketWindow.this);
 
-                final JFileChooser fc = new JFileChooser();
-                int returnVal = fc.showSaveDialog(NewTicketWindow.this);
+                    if (returnVal == JFileChooser.APPROVE_OPTION) {
+                        String fileName = fc.getSelectedFile().getPath();
 
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    String fileName = fc.getSelectedFile().getPath();
+                        // increase counter after selecting file
+                        count++;
+                        ticketId = count;
 
-                    // increase counter after selecting file
-                    count++;
-                    ticketId = count;
-
-                    if (fileName != null && !fileName.isEmpty()) {  // save ticket only to a non empty file
-                        saveTicketsList(ticketId, fileName);
+                        if (fileName != null && !fileName.isEmpty()) {
+                            saveTicketToFile(ticket, fileName);
+                        }
                     }
                 }
+
             }
         });
     }
 
-    private void saveTicketsList(int ticketId, String fileName) {
+    private void saveTicketToFile(Ticket ticket, String fileName) {
         try {
             BufferedWriter file = new BufferedWriter(new FileWriter(fileName, true));
 
-            for (Ticket ticket1 : ticketstList) {
-                file.write(ticket1.toString());
+            if (ticket.getTicketId() == 1) {
+                LocalDateTime dateTimeNow = LocalDateTime.now();
+                DateTimeFormatter formDateTimeNow = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                String formattedDateTime = formDateTimeNow.format(dateTimeNow);
+
+                file.write("> Ticket Registration started at: " + formattedDateTime);
                 file.newLine();
             }
 
+            // write ticket info to file
+            file.write(ticket.toString());
+            file.newLine();
+
             file.close();
-            // update user ticket is saved
-            JOptionPane.showMessageDialog(NewTicketWindow.this, ticketstList.size() + "  records saved to " + fileName, "Save completed", JOptionPane.INFORMATION_MESSAGE);
+            // update user that ticket is saved
+            JOptionPane.showMessageDialog(NewTicketWindow.this, "Record saved to " + fileName, "Save completed", JOptionPane.INFORMATION_MESSAGE);
 
             setVisible(false);
 
@@ -182,19 +194,18 @@ public class NewTicketWindow extends JFrame {
 
     private void addItemsInComboBoxes() {
         // add comboboxes items
-        comboLuggage.addItem("(Select amount of luggage)");
-        comboLuggage.addItem(" 1 ");
-        comboLuggage.addItem(" 2 ");
-        comboLuggage.addItem(" 3 ");
-        comboLuggage.addItem(" 4 ");
+        comboLuggage.addItem("0");
+        comboLuggage.addItem("1");
+        comboLuggage.addItem("2");
+        comboLuggage.addItem("3");
+        comboLuggage.addItem("4");
 
         comboAirlines.addItem("(Select flight airlines)");
         comboAirlines.addItem("Aegean Airlines");
-        comboAirlines.addItem("Ryan Airines");
+        comboAirlines.addItem("Ryan Airlines");
         comboAirlines.addItem("Swiss Airlines");
         comboAirlines.addItem("Olympic Airlines");
         comboAirlines.addItem("British Airways");
-
 
         comboDeparture.addItem("(Select departure time)");
         comboDeparture.addItem("6AM");
@@ -212,7 +223,7 @@ public class NewTicketWindow extends JFrame {
         labelTextClientName.setAlignmentX(CENTER_ALIGNMENT);
         textItinerary.setAlignmentX(CENTER_ALIGNMENT);
         labelTextItinerary.setAlignmentX(CENTER_ALIGNMENT);
-        labelTicketPrice.setAlignmentX(CENTER_ALIGNMENT);
+
         comboLuggage.setAlignmentX(CENTER_ALIGNMENT);
         labelComboLuggage.setAlignmentX(CENTER_ALIGNMENT);
         comboAirlines.setAlignmentX(CENTER_ALIGNMENT);
@@ -221,6 +232,7 @@ public class NewTicketWindow extends JFrame {
         labelTextIdentityNumber.setAlignmentX(CENTER_ALIGNMENT);
         comboDeparture.setAlignmentX(CENTER_ALIGNMENT);
         labelComboDeparture.setAlignmentX(CENTER_ALIGNMENT);
+        labelTicketPrice.setAlignmentX(CENTER_ALIGNMENT);
 
         panelMain.add(Box.createVerticalGlue());
         panelMain.add(Box.createHorizontalGlue());
@@ -240,8 +252,6 @@ public class NewTicketWindow extends JFrame {
         panelMain.add(Box.createRigidArea(new Dimension(0, 10)));
         panelMain.add(textItinerary);
         panelMain.add(Box.createRigidArea(new Dimension(0, 10)));
-        panelMain.add(labelTicketPrice);
-        panelMain.add(Box.createRigidArea(new Dimension(0, 10)));
         panelMain.add(labelComboLuggage);
         panelMain.add(Box.createRigidArea(new Dimension(0, 10)));
         panelMain.add(comboLuggage);
@@ -257,6 +267,8 @@ public class NewTicketWindow extends JFrame {
         panelMain.add(labelComboDeparture);
         panelMain.add(Box.createRigidArea(new Dimension(0, 10)));
         panelMain.add(comboDeparture);
+        panelMain.add(Box.createRigidArea(new Dimension(0, 10)));
+        panelMain.add(labelTicketPrice);
         panelMain.add(Box.createRigidArea(new Dimension(0, 10)));
 
         panelMain.add(Box.createHorizontalGlue());

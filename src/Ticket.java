@@ -16,24 +16,24 @@ public class Ticket {
         issueDate = "Uknown";
         clientName = "Uknown";
         itinerary = "Uknown";
-        ticketPrice = 0;
         luggage = 0;
         airlines = "Uknown";
         identityNumber = "Uknown";
         departureTime = "Uknown";
+        ticketPrice = 0;
 
     }
 
-    public Ticket(int t_id, String date, String name, String itin, int price, int lug, String airl, String id, String depart) {
+    public Ticket(int t_id, String date, String name, String itin, int lug, String airl, String id, String depart, int price) {
         this.ticketId = t_id;
         this.issueDate = date;
         this.clientName = name;
         this.itinerary = itin;
-        this.ticketPrice = price;
         this.luggage = lug;
         this.airlines = airl;
         this.identityNumber = id;
         this.departureTime = depart;
+        this.ticketPrice = price;
 
     }
 
@@ -85,10 +85,10 @@ public class Ticket {
                 " ,\t IssueDate= " + issueDate +
                 " ,\t ClientName= " + clientName +
                 " ,\t Itinerary= " + itinerary +
-                " ,\t TicketPrice= " + ticketPrice +
                 " ,\t Luggage= " + luggage +
                 " ,\t Airlines= " + airlines +
                 " ,\t IdentityNumber= " + identityNumber +
-                " ,\t DepartureTime= " + departureTime;
+                " ,\t DepartureTime= " + departureTime +
+                " ,\t TicketPrice= " + ticketPrice;
     }
 }

@@ -8,7 +8,7 @@ public class AboutWindow extends JFrame {
     private JLabel labelCompletionDate;
     private JLabel labelImage;
 
-    public AboutWindow(){
+    public AboutWindow() {
         super();
         //create objects
         panelAbout = new JPanel();
@@ -18,14 +18,14 @@ public class AboutWindow extends JFrame {
         labelDeveloperName = new JLabel("Developer's Name:     Katara Georgia");
         labelCompletionDate = new JLabel("Ticket's App Completion Date:   13/06/2021");
 
-        labelImage = new JLabel (new ImageIcon("./desktopScreenshot.png"));
+        labelImage = new JLabel(new ImageIcon("./aboutScreenshot.png"));
 
     }
 
     public void prepareUIAboutWindow() {
-        this.setSize(650,500);
+        this.setSize(650, 500);
         this.setTitle("About");
-        this.setLocation(400,200);
+        this.setLocation(400, 200);
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
 
@@ -40,11 +40,11 @@ public class AboutWindow extends JFrame {
 
         // place components
         panelAbout.add(labelNameApp);
-        panelAbout.add(Box.createRigidArea(new Dimension(0,10)));
+        panelAbout.add(Box.createRigidArea(new Dimension(0, 10)));
         panelAbout.add(labelDeveloperName);
-        panelAbout.add(Box.createRigidArea(new Dimension(0,10)));
+        panelAbout.add(Box.createRigidArea(new Dimension(0, 10)));
         panelAbout.add(labelCompletionDate);
-        panelAbout.add(Box.createRigidArea(new Dimension(0,10)));
+        panelAbout.add(Box.createRigidArea(new Dimension(0, 10)));
         panelAbout.add(labelImage);
 
         panelAbout.add(Box.createHorizontalGlue());
