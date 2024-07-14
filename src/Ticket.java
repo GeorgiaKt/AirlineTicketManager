@@ -4,7 +4,6 @@ public class Ticket {
     private String clientName;
     private String itinerary;
     private int ticketPrice;
-
     private int luggage;    // number of luggage
     private String airlines;    // airline company
     private String identityNumber;

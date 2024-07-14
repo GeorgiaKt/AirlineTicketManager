@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class NewTicketWindow extends JFrame {
@@ -63,6 +62,7 @@ public class NewTicketWindow extends JFrame {
         panelBottom = new JPanel();
 
         btnSave = new JButton("Save");
+
     }
 
     public void prepareUINewTicketWindow() {
@@ -144,6 +144,8 @@ public class NewTicketWindow extends JFrame {
                     JOptionPane.showMessageDialog(NewTicketWindow.this, "Nothing to save", "Saving Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     Ticket ticket = new Ticket(ticketId, issueDate, clientName, itinerary, luggage, airlines, identityNumber, departureTime, ticketPrice);
+                    TicketApp.ticketstList.add(ticket); // add ticket to list
+
                     final JFileChooser fc = new JFileChooser();
                     int returnVal = fc.showSaveDialog(NewTicketWindow.this);
 
@@ -168,6 +170,7 @@ public class NewTicketWindow extends JFrame {
         try {
             BufferedWriter file = new BufferedWriter(new FileWriter(fileName, true));
 
+            // for every new run append mes + date & time before the first ticket
             if (ticket.getTicketId() == 1) {
                 LocalDateTime dateTimeNow = LocalDateTime.now();
                 DateTimeFormatter formDateTimeNow = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");

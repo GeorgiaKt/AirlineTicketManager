@@ -5,7 +5,6 @@ public class AboutWindow extends JFrame {
     private JPanel panelAbout;
     private JLabel labelNameApp;
     private JLabel labelDeveloperName;
-    private JLabel labelCompletionDate;
     private JLabel labelImage;
 
     public AboutWindow() {
@@ -16,10 +15,7 @@ public class AboutWindow extends JFrame {
 
         labelNameApp = new JLabel("Application's Name:     Airline Ticket Manager");
         labelDeveloperName = new JLabel("Developer's Name:     Katara Georgia");
-        labelCompletionDate = new JLabel("Ticket's App Completion Date:   13/06/2021");
-
         labelImage = new JLabel(new ImageIcon("./aboutScreenshot.png"));
-
     }
 
     public void prepareUIAboutWindow() {
@@ -31,7 +27,6 @@ public class AboutWindow extends JFrame {
 
         labelNameApp.setAlignmentX(CENTER_ALIGNMENT);
         labelDeveloperName.setAlignmentX(CENTER_ALIGNMENT);
-        labelCompletionDate.setAlignmentX(CENTER_ALIGNMENT);
         labelImage.setAlignmentX(CENTER_ALIGNMENT);
 
         // place panel at the center
@@ -42,8 +37,6 @@ public class AboutWindow extends JFrame {
         panelAbout.add(labelNameApp);
         panelAbout.add(Box.createRigidArea(new Dimension(0, 10)));
         panelAbout.add(labelDeveloperName);
-        panelAbout.add(Box.createRigidArea(new Dimension(0, 10)));
-        panelAbout.add(labelCompletionDate);
         panelAbout.add(Box.createRigidArea(new Dimension(0, 10)));
         panelAbout.add(labelImage);
 
