@@ -36,6 +36,21 @@ public class AppFrame extends JFrame {
 
     }
 
+    private void startAboutWindow() {
+        AboutWindow aboutWindow = new AboutWindow();
+        aboutWindow.prepareUIAboutWindow();
+    }
+
+    private void startTicketListWindow() {
+        TicketListWindow ticketListWindow = new TicketListWindow();
+        ticketListWindow.prepareUITicketListWindow();
+    }
+
+    private void startNewTicketWindow() {
+        NewTicketWindow newTicketWindow = new NewTicketWindow();
+        newTicketWindow.prepareUINewTicketWindow();
+    }
+
     public void prepareUI() {
         this.setSize(400, 450);
         this.setTitle("Airline Ticket Manager");
@@ -64,7 +79,6 @@ public class AppFrame extends JFrame {
 
         this.setVisible(true);  // set frame to visible
     }
-
 
     private void addActionListenersForMenuItems() {
         newTicketItem.addActionListener(new ActionListener() {
@@ -152,21 +166,6 @@ public class AppFrame extends JFrame {
                 exitApp();
             }
         });
-    }
-
-    private static void startAboutWindow() {
-        AboutWindow aboutWindow = new AboutWindow();
-        aboutWindow.prepareUIAboutWindow();
-    }
-
-    private static void startTicketListWindow() {
-        TicketListWindow ticketListWindow = new TicketListWindow();
-        ticketListWindow.prepareUITicketListWindow();
-    }
-
-    private static void startNewTicketWindow() {
-        NewTicketWindow newTicketWindow = new NewTicketWindow();
-        newTicketWindow.prepareUINewTicketWindow();
     }
 
     // when the user chooses to exit the app

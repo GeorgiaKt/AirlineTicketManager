@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f117fd13-8bcf-4278-9539-e7ec9cf24b4e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AboutWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AboutWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NewTicketWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewTicketWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicketApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicketListWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketListWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +71,7 @@
       <workItem from="1720822015708" duration="1837000" />
       <workItem from="1720964035201" duration="15710000" />
       <workItem from="1721043566815" duration="61000" />
-      <workItem from="1721156688655" duration="625000" />
+      <workItem from="1721156688655" duration="4973000" />
     </task>
     <servers />
   </component>

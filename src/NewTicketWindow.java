@@ -279,5 +279,4 @@ public class NewTicketWindow extends JFrame {
 
         panelBottom.add(btnSave);
     }
-
 }

@@ -24,7 +24,6 @@ public class AboutWindow extends JFrame {
         this.setLocation(400, 200);
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
-
         labelNameApp.setAlignmentX(CENTER_ALIGNMENT);
         labelDeveloperName.setAlignmentX(CENTER_ALIGNMENT);
         labelImage.setAlignmentX(CENTER_ALIGNMENT);
@@ -47,5 +46,4 @@ public class AboutWindow extends JFrame {
 
         this.setVisible(true);
     }
-
 }

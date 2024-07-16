@@ -80,14 +80,14 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "TicketId=" + ticketId +
-                " ,\t IssueDate= " + issueDate +
-                " ,\t ClientName= " + clientName +
-                " ,\t Itinerary= " + itinerary +
-                " ,\t Luggage= " + luggage +
-                " ,\t Airlines= " + airlines +
-                " ,\t IdentityNumber= " + identityNumber +
-                " ,\t DepartureTime= " + departureTime +
-                " ,\t TicketPrice= " + ticketPrice;
+        return "Ticket Id= " + ticketId +
+                ",  Issue Date= " + issueDate +
+                ",  Client Name= " + clientName +
+                ",  Itinerary= " + itinerary +
+                ",  Luggage= " + luggage +
+                ",  Airlines= " + airlines +
+                ",  Identity Number= " + identityNumber +
+                ",  Departure Time= " + departureTime +
+                ",  Ticket Price (€)= " + ticketPrice;
     }
 }
