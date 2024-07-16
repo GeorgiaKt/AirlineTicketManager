@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class TicketListWindow extends JFrame {
     private JPanel panelUp;
@@ -10,6 +11,7 @@ public class TicketListWindow extends JFrame {
     private JButton btnClose;
     private JTextArea ticketsArea;
     private JScrollPane scrollPane;
+    private ArrayList<String> sortedTicketsList;
 
 
     public TicketListWindow() {
@@ -77,7 +79,7 @@ public class TicketListWindow extends JFrame {
     }
 
     private void fillTicketsTextArea() {
-        for (Ticket i : TicketApp.ticketstList){
+        for (Ticket i : TicketApp.ticketsList){
             ticketsArea.append(i.toString() + "\n");
         }
     }

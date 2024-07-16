@@ -71,23 +71,20 @@ public class AppFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //setVisible(false);    // main window will not be visible
-                NewTicketWindow newTicketWindow = new NewTicketWindow();
-                newTicketWindow.prepareUINewTicketWindow();
+                startNewTicketWindow();
             }
         });
         ticketListItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //setVisible(false);
-                TicketListWindow ticketListWindow = new TicketListWindow();
-                ticketListWindow.prepareUITicketListWindow();
+                startTicketListWindow();
             }
         });
         aboutItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AboutWindow aboutWindow = new AboutWindow();
-                aboutWindow.prepareUIAboutWindow();
+                startAboutWindow();
             }
         });
         exitItem.addActionListener(new ActionListener() {
@@ -126,25 +123,20 @@ public class AppFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //setVisible(false);
-                NewTicketWindow newTicketWindow = new NewTicketWindow();
-                newTicketWindow.prepareUINewTicketWindow();
-
+                startNewTicketWindow();
             }
         });
         btnTicketList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //setVisible(false);
-                TicketListWindow ticketListWindow = new TicketListWindow();
-                ticketListWindow.prepareUITicketListWindow();
-
+                startTicketListWindow();
             }
         });
         btnAbout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AboutWindow aboutWindow = new AboutWindow();
-                aboutWindow.prepareUIAboutWindow();
+                startAboutWindow();
             }
         });
         btnExit.addActionListener(new ActionListener() {
@@ -160,6 +152,21 @@ public class AppFrame extends JFrame {
                 exitApp();
             }
         });
+    }
+
+    private static void startAboutWindow() {
+        AboutWindow aboutWindow = new AboutWindow();
+        aboutWindow.prepareUIAboutWindow();
+    }
+
+    private static void startTicketListWindow() {
+        TicketListWindow ticketListWindow = new TicketListWindow();
+        ticketListWindow.prepareUITicketListWindow();
+    }
+
+    private static void startNewTicketWindow() {
+        NewTicketWindow newTicketWindow = new NewTicketWindow();
+        newTicketWindow.prepareUINewTicketWindow();
     }
 
     // when the user chooses to exit the app

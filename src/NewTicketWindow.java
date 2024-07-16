@@ -144,7 +144,7 @@ public class NewTicketWindow extends JFrame {
                     JOptionPane.showMessageDialog(NewTicketWindow.this, "Nothing to save", "Saving Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     Ticket ticket = new Ticket(ticketId, issueDate, clientName, itinerary, luggage, airlines, identityNumber, departureTime, ticketPrice);
-                    TicketApp.ticketstList.add(ticket); // add ticket to list
+                    TicketApp.ticketsList.add(ticket); // add ticket to list
 
                     final JFileChooser fc = new JFileChooser();
                     int returnVal = fc.showSaveDialog(NewTicketWindow.this);
