@@ -7,11 +7,13 @@ import java.util.Comparator;
 
 public class TicketListWindow extends JFrame {
     private JPanel panelUp;
+    private JPanel panelBottom;
     private JButton btnNewTicket;
     private JButton btnRefresh;
     private JButton btnClose;
     private JTextArea ticketsTextArea;
     private JScrollPane scrollPane;
+    private JButton statisticsBtn;
     private ArrayList<Ticket> sortedTicketsList;
 
 
@@ -19,12 +21,13 @@ public class TicketListWindow extends JFrame {
         super();
 
         panelUp = new JPanel();
-        //JPanel panel = new JPanel();
+        panelBottom = new JPanel();
         btnNewTicket = new JButton("New Ticket");
         btnRefresh = new JButton("Refresh");
         btnClose = new JButton("Close");
         ticketsTextArea = new JTextArea();
         scrollPane = new JScrollPane(ticketsTextArea);
+        statisticsBtn = new JButton("Statistics");
         sortedTicketsList = new ArrayList<>();
 
     }
@@ -36,20 +39,24 @@ public class TicketListWindow extends JFrame {
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         panelUp.setLayout(new FlowLayout(FlowLayout.CENTER));
-
+        panelBottom.setLayout(new FlowLayout(FlowLayout.CENTER));
+        // add components
         panelUp.add(btnNewTicket);
         panelUp.add(btnRefresh);
         panelUp.add(btnClose);
+        panelBottom.add(statisticsBtn);
 
         ticketsTextArea.setEditable(false);
-
-        fillTicketsTextArea();
 
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        this.add(panelUp, BorderLayout.PAGE_START);
+        this.add(panelUp, BorderLayout.NORTH);
         this.add(scrollPane, BorderLayout.CENTER);
+        this.add(panelBottom, BorderLayout.SOUTH);
+
+
+        fillTicketsTextArea();
 
 
         btnNewTicket.addActionListener(new ActionListener() {
@@ -73,6 +80,14 @@ public class TicketListWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
+            }
+        });
+
+        statisticsBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StatisticsWindow statisticsWindow = new StatisticsWindow();
+                statisticsWindow.prepareUIStatisticsWindow();
             }
         });
 
