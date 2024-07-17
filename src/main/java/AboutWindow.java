@@ -7,6 +7,7 @@ public class AboutWindow extends JFrame {
     private JLabel labelDeveloperName;
     private JLabel labelImage;
 
+
     public AboutWindow() {
         super();
         //create objects
@@ -14,7 +15,7 @@ public class AboutWindow extends JFrame {
         panelAbout.setLayout(new BoxLayout(panelAbout, BoxLayout.PAGE_AXIS));
 
         labelNameApp = new JLabel("Application's Name:     Airline Ticket Manager");
-        labelDeveloperName = new JLabel("Developer's Name:     Katara Georgia");
+        labelDeveloperName = new JLabel("Developer's Name:     GeorgiaKt");
         labelImage = new JLabel(new ImageIcon("./aboutScreenshot.png"));
     }
 

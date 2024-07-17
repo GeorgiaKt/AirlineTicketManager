@@ -19,7 +19,6 @@ public class TicketListWindow extends JFrame {
 
     public TicketListWindow() {
         super();
-
         panelUp = new JPanel();
         panelBottom = new JPanel();
         btnNewTicket = new JButton("New Ticket");
@@ -29,7 +28,6 @@ public class TicketListWindow extends JFrame {
         scrollPane = new JScrollPane(ticketsTextArea);
         statisticsBtn = new JButton("Statistics");
         sortedTicketsList = new ArrayList<>();
-
     }
 
     public void prepareUITicketListWindow() {
@@ -55,10 +53,13 @@ public class TicketListWindow extends JFrame {
         this.add(scrollPane, BorderLayout.CENTER);
         this.add(panelBottom, BorderLayout.SOUTH);
 
-
         fillTicketsTextArea();
+        addActionListenersForBtns();
 
+        this.setVisible(true);
+    }
 
+    private void addActionListenersForBtns() {
         btnNewTicket.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -90,9 +91,6 @@ public class TicketListWindow extends JFrame {
                 statisticsWindow.prepareUIStatisticsWindow();
             }
         });
-
-
-        this.setVisible(true);
     }
 
     private void fillTicketsTextArea() {

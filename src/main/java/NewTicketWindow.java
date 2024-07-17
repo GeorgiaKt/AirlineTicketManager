@@ -10,7 +10,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class NewTicketWindow extends JFrame {
-
     static int count = 1; // counter used for id
     private JLabel labelTicketId;
     private JTextField textIssueDate;
@@ -33,7 +32,6 @@ public class NewTicketWindow extends JFrame {
     private JPanel panelRight;
     private JPanel panelBottom;
     private JButton btnSave;
-
     private int price = 50;
 
 
@@ -62,7 +60,6 @@ public class NewTicketWindow extends JFrame {
         panelBottom = new JPanel();
 
         btnSave = new JButton("Save");
-
     }
 
     public void prepareUINewTicketWindow() {
@@ -75,9 +72,7 @@ public class NewTicketWindow extends JFrame {
         panelMain.setLayout(new BoxLayout(panelMain, BoxLayout.PAGE_AXIS));
 
         placeComponentsOnNewTicketWindow();
-
         addItemsInComboBoxes();
-
         addActionListeners();
 
         // add panels on frame
@@ -85,8 +80,6 @@ public class NewTicketWindow extends JFrame {
         this.add(panelLeft, BorderLayout.WEST);
         this.add(panelRight, BorderLayout.EAST);
         this.add(panelBottom, BorderLayout.SOUTH);
-
-
         this.setVisible(true);
     }
 
@@ -161,7 +154,6 @@ public class NewTicketWindow extends JFrame {
                         }
                     }
                 }
-
             }
         });
     }

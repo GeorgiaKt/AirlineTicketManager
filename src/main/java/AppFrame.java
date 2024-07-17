@@ -175,5 +175,4 @@ public class AppFrame extends JFrame {
             System.exit(0);
         }
     }
-
 }

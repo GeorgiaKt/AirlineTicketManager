@@ -8,7 +8,5 @@ public class TicketApp {
 
         AppFrame frame = new AppFrame();
         frame.prepareUI();
-
     }
-
 }
