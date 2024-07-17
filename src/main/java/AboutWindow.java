@@ -16,7 +16,7 @@ public class AboutWindow extends JFrame {
 
         labelNameApp = new JLabel("Application's Name:     Airline Ticket Manager");
         labelDeveloperName = new JLabel("Developer's Name:     GeorgiaKt");
-        labelImage = new JLabel(new ImageIcon("./aboutScreenshot.png"));
+        labelImage = new JLabel(new ImageIcon("src/main/resources/aboutScreenshot.png"));
     }
 
     public void prepareUIAboutWindow() {
