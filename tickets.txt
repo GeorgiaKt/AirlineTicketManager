@@ -1,0 +1,11 @@
+> Ticket Registration started at: 17-07-2024 21:11:38
+Ticket Id= 1,  Issue Date= 13/05/2021,  Client Name= Papakonstantinou Giorgos,  Itinerary= Athens-London,  Luggage= 1,  Airlines= Aegean Airlines,  Identity Number= AK147093,  Departure Time= 9AM,  Ticket Price (€)= 80
+Ticket Id= 2,  Issue Date= 12/04/2022,  Client Name= Papadopoulou Aikaterini,  Itinerary= Toronto-Madrid,  Luggage= 2,  Airlines= Swiss Airlines,  Identity Number= PT305733,  Departure Time= 7PM,  Ticket Price (€)= 90
+Ticket Id= 3,  Issue Date= 08/07/2020,  Client Name= Ioannou Alexandros,  Itinerary= Komotini-Athens,  Luggage= 1,  Airlines= Ryan Airlines,  Identity Number= TX594772,  Departure Time= 9AM,  Ticket Price (€)= 80
+Ticket Id= 4,  Issue Date= 23/04/2023,  Client Name= Antoniou Christos,  Itinerary= Chania-Thessaloniki,  Luggage= 2,  Airlines= Olympic Airlines,  Identity Number= XB879644,  Departure Time= 7PM,  Ticket Price (€)= 90
+Ticket Id= 5,  Issue Date= 02/09/2021,  Client Name= Manthou Aggeliki,  Itinerary= Athens-Paris,  Luggage= 4,  Airlines= Aegean Airlines,  Identity Number= AZ132250,  Departure Time= 6AM,  Ticket Price (€)= 115
+Ticket Id= 6,  Issue Date= 19/12/2022,  Client Name= Thomas Nikos,  Itinerary= Patra-Athens,  Luggage= 0,  Airlines= Ryan Airlines,  Identity Number= KN948536,  Departure Time= 3PM,  Ticket Price (€)= 50
+Ticket Id= 7,  Issue Date= 09/06/2023,  Client Name= Kappa Eleni,  Itinerary= London-Athens,  Luggage= 3,  Airlines= British Airways,  Identity Number= TT944835,  Departure Time= 9AM,  Ticket Price (€)= 105
+Ticket Id= 8,  Issue Date= 03/09/2022,  Client Name= Karagiannis Sotiris,  Itinerary= Thessaloniki-Athens,  Luggage= 0,  Airlines= Aegean Airlines,  Identity Number= ON593751,  Departure Time= 7PM,  Ticket Price (€)= 50
+Ticket Id= 9,  Issue Date= 14/01/2024,  Client Name= Antoniou Panagiotis,  Itinerary= Athens-Berlin,  Luggage= 2,  Airlines= Aegean Airlines,  Identity Number= BX039573,  Departure Time= 3PM,  Ticket Price (€)= 90
+Ticket Id= 10,  Issue Date= 18/03/2024,  Client Name= Louka Anna,  Itinerary= Thessaloniki-Milan,  Luggage= 4,  Airlines= Ryan Airlines,  Identity Number= EM496592,  Departure Time= 3PM,  Ticket Price (€)= 115
