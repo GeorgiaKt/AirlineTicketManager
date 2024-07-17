@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
+import io.github.parubok.text.multiline.MultilineLabel;
+
 public class StatisticsWindow extends JFrame {
     private JPanel panelMain;
     private JLabel totalTicketsLabel;
@@ -8,7 +10,7 @@ public class StatisticsWindow extends JFrame {
     private JLabel maxTicketCostLabel;
     private JLabel minTicketCostLabel;
     private JLabel noIssuedTicketsLabel;
-    private JLabel airlinesLabel;
+    private MultilineLabel airlinesLabel;
 
     public StatisticsWindow() {
         super();
@@ -18,7 +20,7 @@ public class StatisticsWindow extends JFrame {
         maxTicketCostLabel = new JLabel();
         minTicketCostLabel = new JLabel();
         noIssuedTicketsLabel = new JLabel();
-        airlinesLabel = new JLabel();
+        airlinesLabel = new MultilineLabel();
     }
 
     public void prepareUIStatisticsWindow() {
@@ -120,6 +122,7 @@ public class StatisticsWindow extends JFrame {
                     String.format("%.2f", olympicPerc) + "% issued for Olympic Airlines \n" +
                     String.format("%.2f", britishPerc) + "% issued for British Airways \n"
             );
+            
         } else
             noIssuedTicketsLabel.setText("No issued tickets yet!");
 
