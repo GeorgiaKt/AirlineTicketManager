@@ -36,12 +36,10 @@ public class Ticket {
 
     }
 
-    //getters
     public int getTicketId() {
         return ticketId;
     }
 
-    //setters
     public void setTicketId(int ticketId) {
         this.ticketId = ticketId;
     }
@@ -76,6 +74,38 @@ public class Ticket {
 
     public void setTicketPrice(int ticketPrice) {
         this.ticketPrice = ticketPrice;
+    }
+
+    public int getLuggage() {
+        return luggage;
+    }
+
+    public void setLuggage(int luggage) {
+        this.luggage = luggage;
+    }
+
+    public String getAirlines() {
+        return airlines;
+    }
+
+    public void setAirlines(String airlines) {
+        this.airlines = airlines;
+    }
+
+    public String getIdentityNumber() {
+        return identityNumber;
+    }
+
+    public void setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
+    }
+
+    public String getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(String departureTime) {
+        this.departureTime = departureTime;
     }
 
     @Override
