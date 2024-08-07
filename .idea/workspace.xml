@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f117fd13-8bcf-4278-9539-e7ec9cf24b4e" name="Changes" comment="" />
+    <list default="true" id="f117fd13-8bcf-4278-9539-e7ec9cf24b4e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AboutWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AboutWindow.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,12 +39,12 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/Users/geo/OneDrive/_Programming/Java/IntelliJ/MultimediaApp",
+    "last_opened_file_path": "C:/Users/geo/OneDrive/_Programming/Java/IntelliJ/NetworkingProgramming",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.26666668",
     "vue.rearranger.settings.migration": "true"
@@ -76,6 +79,10 @@
       <workItem from="1721156688655" duration="6028000" />
       <workItem from="1721168257663" duration="13000" />
       <workItem from="1721216219491" duration="15258000" />
+      <workItem from="1721242124429" duration="454000" />
+      <workItem from="1722159572851" duration="112000" />
+      <workItem from="1722609393780" duration="1335000" />
+      <workItem from="1723025222017" duration="3856000" />
     </task>
     <servers />
   </component>
